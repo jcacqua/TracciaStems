@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>TracciaStems</AssemblyName>
+    <RootNamespace>TracciaStems</RootNamespace>
+    <Product>TracciaStems</Product>
+    <Version>1.0.0</Version>
+    <Authors>Jean-Christophe Acquaviva</Authors>
+    <Description>Mixage multipiste de stems WAV/MP3</Description>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <!-- permet aussi de compiler depuis Linux/macOS -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- exe autonome : ne télécharge que les paquets réellement nécessaires
+         (pas le runtime ASP.NET, pas l'outil d'analyse ILLink) -->
+    <DisableTransitiveFrameworkReferenceDownloads>true</DisableTransitiveFrameworkReferenceDownloads>
+    <EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="app.ico" />
+    <Resource Include="Assets\Logo\*.png" />
+  </ItemGroup>
+
+</Project>
